@@ -13,8 +13,9 @@
 	background: none;
 	opacity: 0.8;
 	z-index: 1000;
-/*}
-.header.background{*/
+	transition: all 0.5s linear;
+}
+.header.background{
 	background: rgba(0,0,0,0.7)
 }
 nav{
@@ -66,12 +67,15 @@ a:hover{
 	height: 100vh;
 	scroll-snap-align:start;
 	position:relative;
+	border-top:#000 0/31px solid;
+	border-bottom:#000 1px solid;	 
 }
 .section1{
-	background: url("images/home.jpeg");	
-	background-size:100%;
+	background: url("images/home.jpeg");
+	background-size:100%; 	/*changing this for media queries should be enough	*/
 	background-position: center;
 	background-attachment: fixed;
+	background-repeat: no-repeat;
 }
 
 .section2{
@@ -112,16 +116,22 @@ a:hover{
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 60px 1fr 1fr ;
 }
-/*.div2-div,.div3-div{
-	border:#000 2px solid; 
-}*/
+
 .div2-text,.div3-text{
 	background-color: rgba(0,0,0,0.4);
 	display: flex;
 	justify-content: center;
 	align-items:  center;
-	padding:10%;
+	padding:20px;
 	font-size: 1.3rem;
 	line-height: 1.5;
-	color: #fff 
+	color: #fff ;
+	position:relative;
+	bottom:40%;
+	opacity:0;
+	transition: all 1s ease-in-out;
+}
+.in-position{
+	bottom:0;
+	opacity:1;
 }
