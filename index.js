@@ -12,7 +12,9 @@ const section1Observer = new IntersectionObserver(function(entry,sectionObserver
 		if(!entered.isIntersecting){
 			header.classList.add("background");
 			div2text[0].classList.add("in-position");
-			div2text[1].classList.add("in-position");
+			setTimeout(function(){
+				div2text[1].classList.add("in-position");
+			},500);
 		}
 		else{
 			header.classList.remove("background")
@@ -25,10 +27,11 @@ section1Observer.observe(section1);
 
 const sectionsObserver = new IntersectionObserver(function(entry,sectionsObserver){
 	entry.forEach(entered => {
-		console.log(entered.target.id)
 		if(!entered.isIntersecting){
 			div3text[0].classList.add("in-position")
-			div3text[1].classList.add("in-position")
+			setTimeout(function(){
+				div3text[1].classList.add("in-position");
+			},500);		
 		}
 	});
 },options2);
